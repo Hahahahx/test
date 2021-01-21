@@ -13,6 +13,8 @@
         "esModuleInterop": true,
         "baseUrl": ".",
         "jsx": "react",
+        "types": ["node", "jest"],
+        "resolveJsonModule": true ,
         "lib": ["dom", "dom.iterable", "esnext"],
         "paths": {
             "*": ["node_modules/*", "src/types/*"],

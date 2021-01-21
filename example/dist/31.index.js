@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[31],{192:function(e,n){throw new Error('Module parse failed: Unexpected token (2:10)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| {\n>     "meta":{\n|         "name":"\'土豆\'"\n|     }')}}]);
-//# sourceMappingURL=31.index.js.map

@@ -4,13 +4,13 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
     template: path.join(__dirname, "./example/index.html"),
     filename: "./index.html",
 });
-const UxAutoRoutePlugin = require("ux-autoroute-plugin");
-const uxAutoRoutePlugin = new UxAutoRoutePlugin({
-    pagePath: path.resolve("example/pages"),
-    output: path.resolve("example"),
-    filename: "routeConfig.ts",
-    srcAlias: "@",
-});
+// const UxAutoRoutePlugin = require("ux-autoroute-plugin");
+// const uxAutoRoutePlugin = new UxAutoRoutePlugin({
+//     pagePath: path.resolve("example/pages"),
+//     output: path.resolve("example"),
+//     filename: "routeConfig.ts",
+//     srcAlias: "@",
+// });
 
 const rules = [
     {
@@ -51,10 +51,10 @@ module.exports = {
     module: {
         rules: rules,
     },
-    plugins: [htmlWebpackPlugin, uxAutoRoutePlugin],
+    plugins: [htmlWebpackPlugin],
     resolve: {
-        alias:{
-            "@":path.resolve('example')
+        alias: {
+            "@": path.resolve('example')
         },
         extensions: [".js", ".jsx", ".ts", ".tsx"],
     },

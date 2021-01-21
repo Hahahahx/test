@@ -1,60 +1,45 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";
-import { Routers } from "../src/index";
-import { routeConfig } from "./routeConfig";
+import { Input, PictureSelect } from "../src";
 
 const App = () => {
-    const [userAuth, setAuth] = useState(2);
-    const routeAuth = [["/tomato", "/potato"], ["/main"]];
-
-    const setUserAuth = (num: number) => {
-        return () => {
-            setAuth(num);
-        };
-    };
-
-    const getAuthName = (num?: number) => {
-        switch (Number.isInteger(num) ? num : userAuth) {
-            case 0:
-                return "高级";
-            case 1:
-                return "中级";
-            case 2:
-                return "低级";
-        }
-    };
-
+    const pictures = [
+        {
+            id: "1",
+            name: "foo",
+            url:
+                "https://www.super-hobby.com/zdjecia/7/9/3/29984_2_tru01050_15.jpg",
+        },
+        {
+            id: "2",
+            name: "foo",
+            url:
+                "https://www.super-hobby.com/zdjecia/2/8/3/29984_1_tru01050_12.jpg",
+        },
+        {
+            id: "3",
+            name: "foo",
+            url:
+                "https://www.super-hobby.com/zdjecia/3/8/3/29984_1_tru01050_2.jpg",
+        },
+    ];
     return (
         <>
-            <div>您的角色权限：{getAuthName()}</div>
-            <div>
-                <button onClick={setUserAuth(2)}>{getAuthName(2)}</button>
-                <button onClick={setUserAuth(1)}>{getAuthName(1)}</button>
-                <button onClick={setUserAuth(0)}>{getAuthName(0)}</button>
-            </div>
-            <HashRouter>
-                <Routers
-                    routers={routeConfig}
-                    before={(location) => {
-                        const { hash } = location;
-                        const result = routeAuth.some((item, index) => {
-                            return item.some((route) => {
-                                if (hash.includes(route)) {
-                                    return Number.isInteger(userAuth)
-                                        ? // @ts-ignore
-                                          userAuth > index
-                                        : true;
-                                }
-                            });
-                        });
-                        if (result) {
-                            return <>您无权访问</>;
-                        }
-                    }}
-                    noMatch={() => <>404</>}
-                />
-            </HashRouter>
+            <h1>第一题</h1>
+            <PictureSelect
+                data={pictures}
+                id="id"
+                img="url"
+                value={["1"]}
+                onChange={(newVal) => console.log(newVal)}
+            />
+            <h1>第二题</h1>
+            <Input
+                type="text"
+                lazy={2000}
+                onDebounce={(e) => console.log('debounce',e.target.value)}
+                onChange={(e) => console.log('change',e.target.value)}
+            />
         </>
     );
 };

@@ -1,3 +1,4 @@
-import { Routers, RouterView, useRoute } from "./Routers";
+import { Input } from "./input";
+import { PictureSelect } from "./selector";
 
-export { Routers, RouterView, useRoute };
+export { Input, PictureSelect };

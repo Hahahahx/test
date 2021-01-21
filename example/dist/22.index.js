@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[22],{183:function(e,o){throw new Error('Module parse failed: Unexpected token (1:10)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> {"version":3,"file":"5.index.js","sources":["webpack:///5.index.js"],"mappings":"AAAA","sourceRoot":""}')}}]);
-//# sourceMappingURL=22.index.js.map
