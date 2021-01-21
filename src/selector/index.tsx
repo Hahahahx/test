@@ -53,21 +53,21 @@ export function PictureSelect<T, K extends keyof T>({
                     return (
                         <SelectBox
                             key={index}
-                            className={`${css.inlineBox} item${index}`}
+                            className={`${css.inlineBox} item box${index}`}
                             value={selectList.includes(val)}
-                            onChange={(value) => {
-                                if (value) {
-                                    setList([...selectList, data[index][id]]);
+                            onChange={(val: any) => {
+                                if (val) {
+                                    setList([...selectList, value[id]]);
                                 } else {
                                     const keyIndex = selectList.indexOf(
-                                        data[index][id]
+                                        value[id]
                                     );
                                     selectList.splice(keyIndex, 1);
                                     setList([...selectList]);
                                 }
                             }}
                         >
-                            <img src={data[index][img] as any} width="300" />
+                            <img src={value[img] as any} width="300" />
                         </SelectBox>
                     );
                 })}
